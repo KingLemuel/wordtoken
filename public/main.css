@@ -218,3 +218,32 @@ nav li a.selected:hover {
     color: #F55F4E;
  
 }
+
+
+.to_top {
+  margin-top: 20px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.to_top .box {
+  color: red;
+  display: inline-block;
+  text-align: center;
+  width: 100px;
+  padding: 10px;
+  background-color: #EEEEEE;
+}
+.to_top .line {
+  z-index: -1;
+  position: absolute;
+  width: 70%;
+  max-width: 1200px;
+  min-width: 600px  ;
+  height: 1px;
+  background-color: #C1C1C1;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
