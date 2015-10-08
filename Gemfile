@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Add Rails 12 Factor
+gem 'rails_12factor', group: :production
 
 #Add Bootstrap
 gem 'bootstrap-sass'
