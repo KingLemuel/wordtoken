@@ -24,6 +24,13 @@ body {
   display: inline-block;
   color: #fff;
 }
+
+.logo a {
+    font-size: 2rem;
+    color: #fff;
+  text-decoration: none;
+}
+
 .nav {
   padding: 20px;
   padding-right: 0;
