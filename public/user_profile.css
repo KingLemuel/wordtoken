@@ -351,7 +351,7 @@ nav li a.selected:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.token_box {
+.token_box, .notification_box  {
   display: none;
   z-index: 99999;
   position: absolute;
@@ -386,7 +386,7 @@ nav li a.selected:hover {
   border-bottom: 1px solid #ddd;
   margin-bottom: 15px;
 }
-.token_box .dialog {
+.token_box .dialog, .notification_box .dialog {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -394,6 +394,10 @@ nav li a.selected:hover {
   width: 500px;
   height: 500px;
   background-color: #fff;
+}
+
+.notification_box .dialog {
+  height: auto;
 }
 .token_box .btn_give {
   padding: 25px;
@@ -406,3 +410,45 @@ nav li a.selected:hover {
   margin-top: 50px;
 }
 
+
+.notification_box .user {
+  padding: 9px;
+  margin: 11px;
+  border-radius: 3px;
+  overflow: auto;
+  border: 1px solid #aaa;
+  line-height: 35px;
+}
+.notification_box .img {
+  height: 35px;
+  width: 35px;
+  background-color: #000;
+}
+
+.notification_box .name {
+  margin-left: 6px;
+}
+.notification_box .img, .notification_box .name {
+  float: left;
+}
+
+.notification_box .btns > div {
+  background-color: #F55F4E;
+  padding: 0 8px;
+  color: #fff;
+  border-radius: 3px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.notification_box .btns > div:last-of-type {
+  background-color: #ddd;
+  color: #000;
+}
+.notification_box .btns {
+  margin-right: 6px;
+  float: right;
+}
+.notification_box .btns > div {
+  display: inline-block;
+}
