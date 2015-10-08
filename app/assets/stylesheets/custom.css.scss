@@ -1,1 +1,14 @@
-
+.profile_btn {
+	position: relative;
+}
+.noti_circle {
+	position: absolute;
+    left: 75%;
+    background-color: red;
+    text-align: center;
+    top: -10px;
+    border-radius: 1000px;
+    height: 17px;
+    width: 17px;
+    color: #fff;
+}

@@ -23,7 +23,34 @@ body {
   display: inline-block;
   color: #fff;
 }
+.handshake_btn {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0);
+  transition: opacity 1s, background-color 1s;
+  color: #fff;
+  opacity: .6;     
+  float: right;
+  font-weight: 100;
+  font-size: 11px;
+  text-align: center;
+  padding-bottom: 2px;
+}
 
+.handshake_icon {
+    height: 30px;
+    padding: 7px;
+    border-radius: 2px;
+    margin: 12px;
+    margin-bottom: 4px;
+    border: 1px solid #fff;
+
+
+}
+
+.handshake_btn:hover {
+  background-color: rgba(0,0,0,.4);
+  opacity: 1;
+}
 .logo a {
     font-size: 2rem;
     color: #fff;
