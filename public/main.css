@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #eee;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.cont {
+  width: 1000px;
+  margin: auto;
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  padding: 20px;
+  font-size: 2rem;
+  background-color: #F55F4E;
+  display: inline-block;
+  color: #fff;
+}
+
+.nav {
+  padding: 20px;
+  padding-right: 0;
+  font-size: 15px;
+  float: right;
+  margin-top: 30px;
+}
+
+.nav li {
+  display: inline-block;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: #333;
+  padding: 9px 13px;
+}
+
+.nav li a:hover {
+  text-decoration: underline;
+}
+
+nav li a.selected {
+  color: #F55F4E;
+  font-weight: 600;
+}
+
+nav li a.selected:hover {
+  text-decoration: none;
+}
+
+.main {
+  border-top: 3px solid #F55F4E;
+  position: relative;
+  background-color: #fff;
+  min-height: 1000px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* overflow: auto; */
+}
+
+.main::after{
+    content: ' ';
+    display: table;
+}
+
+
+.hero {
+  position: relative;
+  background: url('sssl.jpg');
+  height: 500px;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.search {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  background-color: #fff;
+  padding: 20px;
+  transform: translate(-50%, 50%);
+}
+
+.search input {
+  outline: none;
+  padding: 10px;
+  font-size: 18px;
+  width: 600px;
+}
+
+.hero .text {
+  padding: 20px;
+  border: 1px solid;
+  background-clip: content-box;
+  background-color: rgba(0, 0, 0, .5);
+  color: #fff;
+  width: 220px;
+  height: 220px;
+  font-weight: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1rem;
+  text-align: center;
+  transform-origin: 0% 0%;
+  transform: rotate(45deg) translate(-50%, -50%);
+}
+
+.hero .text .rotated {
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.features {
+  margin-top: 100px;
+}
+
+.feature {
+  padding: 20px;
+  margin: 20px;
+  margin-bottom: 60px;
+  border: 1px solid #F9F9F9;
+  height: 200px;
+  box-sizing: border-box;
+}
+
+.feature .img {
+  height: 154px;
+  line-height: 154px;
+  text-align: center;
+  position: relative;
+  padding: 0 20px;
+  float: left;
+  width: 30%;
+  box-sizing: border-box;
+}
+
+.feature .text {
+  padding: 0 20px;
+  width: 70%;
+  float: right;
+  box-sizing: border-box;
+}
+
+.feature .text .title {
+  font-size: 20px;
+  padding: 10px 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.feature img {
+    position: absolute;
+    width: 160px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.feature:nth-child(even) .img {
+   float: right;
+}
+
+.feature:nth-child(even) .text {
+   float: left;
+}
+
+.feature .desc {
+  font-weight: 100;
+}
+
+
+.main .action {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translate(-50%,-50%);
+}
+
+.main .action .circle {
+  border: 8px solid #EEE;
+  height: 170px;
+  width: 170px;
+  background-color: #F55F4E;
+  border-radius: 1000px;
+  text-align: center;
+  overflow: auto;
+  margin: auto;
+  transition: all .5s;
+}
+
+.main .action .circle p {
+  transition: all .5s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+    width: 200px;
+  font-size: 1.2rem;
+  color: #fff;
+  transform: uppercase;
+}
+
+
+.main .action:hover .circle {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.main .action:hover .circle p {
+    color: #F55F4E;
+ 
+}

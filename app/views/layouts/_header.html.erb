@@ -1,0 +1,22 @@
+ <header class='cont'>
+  <div class="logo">WordToken «</div>
+  <% if user_signed_in? %>
+	  <nav class='nav'>
+	    <ul>
+	      <li><%= link_to 'Home', root_path %></li>
+	      <li><%= link_to 'Map', root_path %></li>
+	      <li><%= link_to 'Profile', user_path(current_user) %></li>
+	      <li><%= link_to 'Log Out', logout_path, :method => :delete %></li>
+	    </ul>
+	  </nav>
+	<% else %>
+	  <nav class='nav'>
+	    <ul>
+	      <li><%= link_to 'Home', root_path %></li>
+	      <li><%= link_to 'Signup', signup_path %></li>
+	      <li><%= link_to 'Login', login_path %></li>
+	    </ul>
+	  </nav>
+
+  <% end %>
+</header>

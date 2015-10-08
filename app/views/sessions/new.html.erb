@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="/sign_up_in.css">
+
+<%= form_for(:session, url: login_path) do |f| %>
+
+<div class="cont main">
+  <div class="stuff">
+    <div class="btn">
+      <div class="title open">Login</div>
+      <div class="form">
+        <form>
+          <table>
+            <tr>
+              <td>
+                <%= f.label :email %><br />
+              </td>
+              <td>
+                  <%= f.email_field :email, autofocus: true %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <%= f.label :password %><br />
+              </td>
+              <td>
+                <%= f.password_field :password, autocomplete: "off" %>
+              </td>
+            </tr>
+          </table>
+          <%= f.submit "Login" %>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

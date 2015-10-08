@@ -1,0 +1,125 @@
+/* USING "LESS" CAN"T JUST COPY PASTE CLICK VIEW COMPILED */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #eee;
+  background: linear-gradient(0deg, #dddddd, #ffffff);
+  font-family: 'Open Sans', sans-serif;
+}
+html,
+body {
+  min-height: 100%;
+}
+.cont {
+  width: 1000px;
+  margin: auto;
+}
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  padding: 20px;
+  font-size: 2rem;
+  background-color: #F55F4E;
+  display: inline-block;
+  color: #fff;
+}
+.nav {
+  padding: 20px;
+  padding-right: 0;
+  font-size: 15px;
+  float: right;
+  margin-top: 30px;
+}
+.nav li {
+  display: inline-block;
+}
+.nav li a {
+  text-decoration: none;
+  color: #333;
+  padding: 9px 13px;
+}
+.nav li a:hover {
+  text-decoration: underline;
+}
+nav li a.selected {
+  color: #F55F4E;
+  font-weight: 600;
+}
+nav li a.selected:hover {
+  text-decoration: none;
+}
+.main {
+  background-position: 50% 50%;
+  background-image: url(http://40.media.tumblr.com/7e339093fb718ced84f26127c1d823cb/tumblr_nuyv85aU5Y1slhhf0o1_1280.jpg);
+  border-top: 3px solid #F55F4E;
+  position: relative;
+  background-color: #ddd;
+  min-height: 690px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* overflow: auto; */
+}
+.main::after {
+  content: ' ';
+  display: table;
+}
+/* Login specific */
+.stuff {
+  width: 600px;
+  margin: auto;
+  min-height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-top: 2px solid #F55F4E;
+  overflow: auto;
+  margin: 15px;
+}
+.btn:first-of-type {
+  margin-top: 0;
+}
+.btn .title {
+  padding: 30px;
+}
+.btn .title:hover,
+.btn .title.open {
+  background-color: #F55F4E;
+  color: #fff;
+  cursor: pointer;
+}
+.btn .form {
+  padding: 24px;
+  box-sizing: border-box;
+}
+.btn .form table {
+  width: 80%;
+}
+.btn input {
+  padding: 10px;
+  margin: 15px;
+}
+.btn input[type='email'],
+.btn input[type='password'] {
+  width: 100%;
+}
+.btn input[type='submit'] {
+  outline: none;
+  border: none;
+  background-color: #F55F4E;
+  color: #fff;
+  font-size: 15px;
+  padding: 20px 60px;
+  float: left;
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.btn .title:not(.open) + .form {
+  display: none;
+}
+

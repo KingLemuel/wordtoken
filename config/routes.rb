@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
-  get 'welcome/home'
-
-  get 'word_tokens/new'
-
-  get 'handshakes/new'
 
   resources :users
+  resources :word_tokens, only: [:new]
+  resources :handshakes, only: [:new]
+  resources :sessions, only: [:new, :create, :destroy]
+
+  get    'signup'  => 'users#new'
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+  
 
   root 'welcome#home'
 

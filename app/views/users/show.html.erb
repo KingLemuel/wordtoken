@@ -1,2 +1,227 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+  <link rel="stylesheet" type="text/css" href="/user_profile.css">
+
+
+
+<div class="cont main">
+  <div class="profile_bg">
+    <div class="profile_pic"><%= gravatar_for @user %></div>
+  </div>
+  <div class="about">
+    <div class="stats">
+      <div class="credibility">
+        <div class="num">2949</div>
+        <div class="title">Credibility</div>
+      </div>
+      <div class="handshakes">
+        <div class="num">35</div>
+        <div class="title">Handshakes</div>
+      </div>
+      <div class="divider"></div>
+      <div class="all_tokens">
+        <div class="num">90</div>
+        <div class="title">Total Tokens</div>
+      </div>
+      <div class="last_active">
+        <div class="num">3m</div>
+        <div class="title">Last Seen</div>
+      </div>
+    </div>
+    <div class="name_sect">
+      <div class="name">
+        <div class="line"></div>
+        <div class="text"><%= @user.name %></div>
+      </div>
+    </div>
+    <div class="two_columns">
+      <div class="left">
+        <h3>Tokens</h3>
+        <div class="tokens">
+          <div class="token">
+            <div class="tag">
+              <div class="word">CSS</div>
+              <span class="times">x</span>
+              <span class="num">4</span>
+            </div>
+
+            <div class="people">
+              <div class="person"></div>
+              <div class="person"></div>
+              <div class="person"></div>
+              <div class="person"></div>
+            </div>
+          </div>
+          <div class="token">
+            <div class="tag">
+              <div class="word">Javascript</div>
+              <span class="times">x</span>
+              <span class="num">4</span>
+            </div>
+
+            <div class="people">
+              <div class="person"></div>
+              <div class="person"></div>
+              <div class="person"></div>
+              <div class="person"></div>
+            </div>
+          </div>
+          <div class="token">
+            <div class="tag">
+              <div class="word">Public Speaking</div>
+              <span class="times">x</span>
+              <span class="num">3</span>
+            </div>
+
+            <div class="people">
+              <div class="person"></div>
+              <div class="person"></div>
+              <div class="person"></div>
+            </div>
+          </div>
+          <div class="token">
+            <div class="tag">
+              <div class="word">Honest</div>
+              <span class="times">x</span>
+              <span class="num">2</span>
+            </div>
+
+            <div class="people">
+              <div class="person"></div>
+              <div class="person"></div>
+            </div>
+          </div>
+          <div class="token">
+            <div class="tag">
+              <div class="word">Punctual</div>
+              <span class="times">x</span>
+              <span class="num">1</span>
+            </div>
+
+            <div class="people">
+              <div class="person"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="show_more">
+          Show More
+        </div>
+      </div>
+      <div class="right">
+        <div class="buttons">
+          <div class="button give_token">Give Token</div>
+          <div class="button shake">Shake Hands</div>
+        </div>
+        <div class="notable">
+          <div class="title">Notable Givers</div>
+
+          <div class="person">
+            <div class="img"></div>
+            <div class="info">
+              <span class="name">Wayne</span>
+              <span class="credibility">9999</span>
+            </div>
+          </div>
+
+          <div class="person">
+            <div class="img"></div>
+            <div class="info">
+              <span class="name">Wayne</span>
+              <span class="credibility">600</span>
+            </div>
+          </div>
+
+          <div class="person">
+            <div class="img"></div>
+            <div class="info">
+              <span class="name">Wayne</span>
+              <span class="credibility">56</span>
+            </div>
+          </div>
+
+          <div class="person">
+            <div class="img"></div>
+            <div class="info">
+              <span class="name">Wayne</span>
+              <span class="credibility">30</span>
+            </div>
+          </div>
+
+          <div class="person">
+            <div class="img"></div>
+            <div class="info">
+              <span class="name">Wayne</span>
+              <span class="credibility">22</span>
+            </div>
+          </div>
+
+          <div class="person">
+            <div class="img"></div>
+            <div class="info">
+              <span class="name">Wayne</span>
+              <span class="credibility">11</span>
+            </div>
+          </div>
+
+          <div class="person">
+            <div class="img"></div>
+            <div class="info">
+              <span class="name">Wayne</span>
+              <span class="credibility">9</span>
+            </div>
+          </div>
+          <div class="person">
+            <div class="img"></div>
+            <div class="info">
+              <span class="name">Wayne</span>
+              <span class="credibility">21</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="to_top">
+  <div class="line"></div>
+  <div class="box">Go to Top</div>
+</div>
+
+
+<div class="token_box">
+  <div class="dialog">
+    <div class="title">
+      Give Muhammad A Token
+    </div>
+    <div class="box">
+      <form>
+        <div class="instruction">Choose any amount of Word Tokens that you want to give..</div>
+        <div class="tags">
+          <label><input type="checkbox" id="cbox1" value="communication"> Communication</label>
+          <label><input type="checkbox" id="cbox1" value="honesty"> Honesty</label>
+          <label><input type="checkbox" id="cbox1" value="reliable"> Reliable</label>
+          <label><input type="checkbox" id="cbox1" value="leader"> Leader</label>
+          <label><input type="checkbox" id="cbox1" value="trustworthy"> Trustworthy</label>
+          <label><input type="checkbox" id="cbox1" value="trustworthy"> Trustworthy</label>
+          <label><input type="checkbox" id="cbox1" value="css"> Css</label>
+          <label><input type="checkbox" id="cbox1" value="javascript"> Javascript</label>
+          <label><input type="checkbox" id="cbox1" value="html"> Html</label>
+          <label><input type="checkbox" id="cbox1" value="rails"> Rails</label>
+          <label><input type="checkbox" id="cbox1" value="jquery"> Jquery</label>
+          <label><input type="checkbox" id="cbox1" value="photoshop"> Photoshop</label>
+          <label><input type="checkbox" id="cbox1" value="linux"> Linux</label>
+
+
+        </div>
+        <div class="instruction">Once you have one or more tokens selected click Vouch</div>
+        <div class="btn_give">Vouch</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/user_profile.js"></script>
+
+

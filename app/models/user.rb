@@ -1,8 +1,4 @@
 class User < ActiveRecord::Base
-	# Devise
-
-	devise :database_authenticatable, :registerable, :recoverable,
-	:rememberable, :trackable, :validatable
 
 	# Word Token - User Relations
 	has_many :active_connections, class_name: "UserWordToken",
@@ -22,6 +18,23 @@ class User < ActiveRecord::Base
 	has_many :connections, :through => :handshakes
 	has_many :inverse_handshakes, :class_name => "Handshake", :foreign_key => "connection_id"
 	has_many :inverse_connections, :through => :inverse_handshakes, :source => :user
+
+	# Validations 
+	validates :name,  presence: true, length: { maximum: 30 }
+	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+	validates :email, presence: true, length: { maximum: 255 },
+	                    format: { with: VALID_EMAIL_REGEX },
+	                    uniqueness: { case_sensitive: false }
+	validates :password, presence: true, length: { minimum: 6 }
+
+	has_secure_password
+
+	
+	def User.digest(string)
+	    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+	                                                  BCrypt::Engine.cost
+	    BCrypt::Password.create(string, cost: cost)
+	end
 
 	
 
@@ -50,8 +63,8 @@ class User < ActiveRecord::Base
 	# end
 	
 	# Set up accessible (or protected) attributes for your model
-	# def user_params
-	# 	params.require(:user).permit(:email, :password, :password_confirmation)
-	# end
+    def user_params
+	 params.require(:user).permit(:email, :password, :password_confirmation)
+	end
 
 end

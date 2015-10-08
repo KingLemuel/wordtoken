@@ -1,2 +1,53 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<link rel="stylesheet" type="text/css" href="/sign_up_in.css">
+
+<%= form_for(@user) do |f| %>
+
+  <div class="cont main">
+    <div class="stuff">
+      <div class="btn">
+        <div class="title signup open">Sign Up</div>
+        <div class="form">
+          <form>
+            <table>
+              <tr>
+                <td>
+                  <%= f.label :name %>
+                </td>
+
+                <td> 
+                  <%= f.text_field :name %>
+                </td>
+
+                <td>
+                  <%= f.label :email %><br />
+                
+                </td>
+
+                <td>
+                  <%= f.email_field :email, autofocus: true %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= f.label :password %>
+                </td>
+                <td>
+                  <%= f.password_field :password %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= f.label :password_confirmation %><br />
+                </td>
+                <td>
+                  <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                </td>
+              </tr>
+            </table>
+            <%= f.submit "Sign up" %>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
