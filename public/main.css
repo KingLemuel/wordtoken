@@ -16,10 +16,17 @@ body {
 .logo {
   font-family: 'Montserrat', sans-serif;
   padding: 20px;
-  font-size: 2rem;
+    font-size: 2rem;
+    color: #fff;
   background-color: #F55F4E;
   display: inline-block;
-  color: #fff;
+
+}
+
+.logo a {
+    font-size: 2rem;
+    color: #fff;
+  text-decoration: none;
 }
 
 .nav {
