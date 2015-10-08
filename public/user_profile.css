@@ -414,6 +414,32 @@ nav li a.selected:hover {
 }
 
 
+
+
+.token_box .btn_give  {
+  user-select: none;
+  box-shadow: 0 8px 0 #d4bd42, 0 15px 20px rgba(0, 0, 0, 0.35);
+  transition: box-shadow 0.1s ease-in-out, transform 0.1s ease-in-out;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.token_box .btn_give:active,
+.token_box .btn_give:focus {
+  transform: translate(0, 4px);
+  box-shadow: 0 4px 0 #d4bd42, 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
 .notification_box .user {
   padding: 9px;
   margin: 11px;
