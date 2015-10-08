@@ -19,6 +19,12 @@ class User < ActiveRecord::Base
 	has_many :inverse_handshakes, :class_name => "Handshake", :foreign_key => "connection_id"
 	has_many :inverse_connections, :through => :inverse_handshakes, :source => :user
 
+	# Request - Relations
+	has_many :requests
+	has_many :connections, :through => :requests
+	has_many :inverse_requests, :class_name => "Request", :foreign_key => "connection_id"
+	has_many :inverse_connections, :through => :inverse_requests, :source => :user
+
 	# Validations 
 	validates :name,  presence: true, length: { maximum: 30 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -28,6 +34,8 @@ class User < ActiveRecord::Base
 	validates :password, presence: true, length: { minimum: 6 }
 
 	has_secure_password
+
+
 
 	
 	def User.digest(string)
@@ -60,6 +68,7 @@ class User < ActiveRecord::Base
      end
 
      def accept_handshake(other_user)
+     	handshakes.find_by()
      end
 
 	 def shook_hands?(other_user)
