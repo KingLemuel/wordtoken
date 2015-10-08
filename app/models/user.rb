@@ -53,14 +53,17 @@ class User < ActiveRecord::Base
 	end
 
 
-	# def request_handshake(other_user)
-	# end
+	 def request_handshake(other_user)
+	 end
 
-	# def unrequest_handshake(other_user)
-	# end
+	 def cancel_handshake(other_user)
+     end
 
-	# def handshaked?(other_user)
-	# end
+     def accept_handshake(other_user)
+     end
+
+	 def shook_hands?(other_user)
+	 end
 	
 	# Set up accessible (or protected) attributes for your model
     def user_params
