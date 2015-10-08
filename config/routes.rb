@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'welcome/home'
+
+  get 'word_tokens/new'
+
+  get 'handshakes/new'
+
+  resources :users
+
+  root 'welcome#home'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

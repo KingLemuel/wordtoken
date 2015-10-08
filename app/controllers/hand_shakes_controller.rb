@@ -1,0 +1,2 @@
+class HandShakesController < ApplicationController
+end
