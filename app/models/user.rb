@@ -62,16 +62,19 @@ class User < ActiveRecord::Base
 
 
 	 def request_handshake(other_user)
+	 	current_user.create(connection_id: other_user.id)
 	 end
 
 	 def cancel_handshake(other_user)
+	 	requests.find_by(connection_id: other_user.id).destroy
      end
 
      def accept_handshake(other_user)
-     	handshakes.find_by()
+     	handshakes.create(connection_id: other_user.id)
      end
 
 	 def shook_hands?(other_user)
+	 	
 	 end
 	
 	# Set up accessible (or protected) attributes for your model
