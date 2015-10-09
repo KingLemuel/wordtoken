@@ -74,7 +74,7 @@ class User < ActiveRecord::Base
 
      def accept_handshake(other_user)
      	handshakes.create(connection_id: other_user.id)
-     	# request.find_by(connection_id: other_user.id).destroy
+     	request.find_by(connection_id: other_user.id).destroy
      end
 
 	 def shook_hands?(other_user)
