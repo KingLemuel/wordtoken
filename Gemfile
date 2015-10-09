@@ -4,9 +4,9 @@ source 'https://rubygems.org'
 gem 'pry'
 
 # Add sunspot
-gem 'sunspot_rails'
+# gem 'sunspot_rails'
 
-gem 'sunspot_solr'
+# gem 'sunspot_solr'
 
 # Add Rails 12 Factor
 gem 'rails_12factor', group: :production

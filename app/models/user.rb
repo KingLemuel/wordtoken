@@ -35,10 +35,10 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 
-	# solr
-	searchable do 
-		text :name
-	end
+	# # solr
+	# searchable do 
+	# 	text :name
+	# end
 
 
 	def User.digest(string)
