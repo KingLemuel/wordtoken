@@ -24,8 +24,9 @@
         <div class="title">Credibility</div>
       </div>
       <div class="handshakes">
-        <div class="num"><%= @user.handshakes.count %></div>
-        <div class="title">Handshakes</div>
+      <% handshakes = @user.handshakes.count + @user.inverse_handshakes.count %>
+        <div class="num"><%= handshakes %></div>
+        <div class="title"><%= handshakes == 1 ? "Handshake": "Handshakes" %></div>
       </div>
       <div class="divider"></div>
       <div class="all_tokens">
@@ -239,12 +240,15 @@
 <div class="notification_box">
   <div class="dialog">
 <% current_user.inverse_requests.each do |req| %>
+
+  <% @req = req %>
     <div class="user"> 
       <div class="img"></div>
       <div class="name"><%= req.user.name %></div>
+      
       <div class="btns">
         <div class="accept"><%= render 'accept_form' %></div>
-        <div class="decline">Decline</div>
+        <div class="decline"><%= render 'decline_form' %></div>
       </div>
     </div>
 <% end %>
