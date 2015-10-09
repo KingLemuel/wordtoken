@@ -8,6 +8,7 @@ function notification(argument) {
   var notification_box = $('.notification_box');
 
   function showNotificationsDialog() {
+    if (notification_box.find(".user").length<1) return;
     notification_box.fadeIn();
     var n = notification_box.find('.dialog').offset().top;
     $('html, body').animate({
@@ -16,10 +17,15 @@ function notification(argument) {
   }
 
 
+
+  $('.notification_box .btns input').click(function(){
+      $(this).closest('.user').remove();
+  });
+
   notification_box.click(function(e) {
     if (e.target != this) return;
     if ($(this).is('.notification_box')) {
-      $(this).hide();
+    notification_box.hide();
     }
   });
 
