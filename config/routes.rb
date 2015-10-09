@@ -1,9 +1,11 @@
+
 Rails.application.routes.draw do
 
   resources :users
-  resources :word_tokens, only: [:new]
-  resources :handshakes, only: [:new]
+  resources :word_tokens, only: [:new, :create, :destroy]
+  resources :handshakes, only: [:new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :requests, only: [:create, :destroy]
 
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'

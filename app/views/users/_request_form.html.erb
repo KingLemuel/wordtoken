@@ -1,16 +1,14 @@
-<% unless current_user == @user  %>
-	<div class="button give_token">Give Token</div>
+<% unless current_user? @user  %>
+    <div class="button give_token">Give Token</div>
+	<% if current_user.shook_hands? @user %>
+	 <div class="button shake">Connected</div>
+	<% else %>
+		<%= form_for(current_user.requests.build(connection_id: @user.id),remote: true) do |f| %>
+		<div><%= hidden_field_tag :connection_id, value = @user.id %></div>
+		<%= f.submit "Shake Hands", class: "button shake" %>
+		<% end %>
 
-	<%= form_for(current_user.requests.build(connection_id: @user.id),
-					remote: true) do |f| %>
-		<div> <%= f.hidden_field :user_id %> </div>
-		<%= f.submit "Request Handshake", class: "button shake" %>
 	<% end %>
-	
-	<div class="button shake">Shake Hands</div>
-	
-<% else %>
-
 <% end %>
 
 

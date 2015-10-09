@@ -1,5 +1,13 @@
 source 'https://rubygems.org'
 
+#pry 
+gem 'pry'
+
+# Add sunspot
+gem 'sunspot_rails'
+
+gem 'sunspot_solr'
+
 # Add Rails 12 Factor
 gem 'rails_12factor', group: :production
 

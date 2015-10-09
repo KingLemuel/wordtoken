@@ -35,9 +35,12 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 
+	# solr
+	searchable do 
+		text :name
+	end
 
 
-	
 	def User.digest(string)
 	    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
 	                                                  BCrypt::Engine.cost
@@ -62,7 +65,7 @@ class User < ActiveRecord::Base
 
 
 	 def request_handshake(other_user)
-	 	current_user.create(connection_id: other_user.id)
+	 	requests.create(connection_id: other_user.id)
 	 end
 
 	 def cancel_handshake(other_user)
@@ -71,10 +74,11 @@ class User < ActiveRecord::Base
 
      def accept_handshake(other_user)
      	handshakes.create(connection_id: other_user.id)
+     	# request.find_by(connection_id: other_user.id).destroy
      end
 
 	 def shook_hands?(other_user)
-	 	
+	 	handshakes.find_by(connection_id: other_user.id)
 	 end
 	
 	# Set up accessible (or protected) attributes for your model

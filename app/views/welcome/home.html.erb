@@ -7,9 +7,19 @@
         WordToken is A Network For Credibility. The simple solution that provides Trust & Legitamacy for the interents.
       </div>
     </div>
+
+
+
     <div class="search">
-      <input type="text" placeholder='Find Someone' />
+     <!--  <input type="text" placeholder='Find Someone' /> -->
+    <%= form_tag users_path, :method => :get do %>
+      <%= text_field_tag :search, params[:search] %>
+      
+    <% end %>
     </div>
+
+
+
     <div class="action">
       <div class="circle">
         <p>Let's Trust</p>
