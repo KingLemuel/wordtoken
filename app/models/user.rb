@@ -15,15 +15,15 @@ class User < ActiveRecord::Base
 	# Handshake - User - Relations
 	#Handshake Relationship
 	has_many :handshakes
-	has_many :connections, :through => :handshakes
+	has_many :hand_connections, :through => :handshakes
 	has_many :inverse_handshakes, :class_name => "Handshake", :foreign_key => "connection_id"
-	has_many :inverse_connections, :through => :inverse_handshakes, :source => :user
+	has_many :inverse_hand_connections, :through => :inverse_handshakes, :source => :user
 
 	# Request - Relations
 	has_many :requests
-	has_many :connections, :through => :requests
+	has_many :req_connections, :through => :requests
 	has_many :inverse_requests, :class_name => "Request", :foreign_key => "connection_id"
-	has_many :inverse_connections, :through => :inverse_requests, :source => :user
+	has_many :inverse_req_connections, :through => :inverse_requests, :source => :user
 
 	# Validations 
 	validates :name,  presence: true, length: { maximum: 30 }
@@ -68,17 +68,19 @@ class User < ActiveRecord::Base
 	 	requests.create(connection_id: other_user.id)
 	 end
 
-	 def cancel_handshake(other_user)
-	 	requests.find_by(connection_id: other_user.id).destroy
+	 def cancel_request(other_user)
+	 	inverse_requests.find_by(user_id: other_user.id).destroy
      end
 
      def accept_handshake(other_user)
      	handshakes.create(connection_id: other_user.id)
-     	request.find_by(connection_id: other_user.id).destroy
+     	cancel_request other_user
      end
 
+
+
 	 def shook_hands?(other_user)
-	 	handshakes.find_by(connection_id: other_user.id)
+	 	handshakes.find_by(connection_id: other_user.id) || inverse_handshakes.find_by(user_id: other_user.id)
 	 end
 	
 	# Set up accessible (or protected) attributes for your model
