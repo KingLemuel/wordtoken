@@ -457,6 +457,7 @@ nav li a.selected:hover {
   height: 35px;
   width: 35px;
   background-color: #000;
+  overflow: hidden;
 }
 
 .notification_box .name {
@@ -465,7 +466,7 @@ nav li a.selected:hover {
 .notification_box .img, .notification_box .name {
   float: left;
 }
-
+/*
 .notification_box .btns > div {
   background-color: #F55F4E;
   padding: 0 8px;
@@ -475,8 +476,31 @@ nav li a.selected:hover {
   cursor: pointer;
 }
 
+.notification_box .btns input {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 16PX;
+  outline: none;
+}
+.notification_box .btns > div:last-of-type input {
+  color: #000;
+}
 .notification_box .btns > div:last-of-type {
   background-color: #ddd;
+  color: #000;
+}*/
+.notification_box .btns input {
+    background-color: #F55F4E;
+    padding: 8px 9px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    border-radius: 2px;
+    color: #fff;
+}
+.notification_box .btns > div:last-of-type input {
+  background-color: #DEDEDE;
   color: #000;
 }
 .notification_box .btns {
