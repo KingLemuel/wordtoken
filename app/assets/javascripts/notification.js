@@ -2,9 +2,6 @@ $(document).ready(notification);
 
 function notification(argument) {
   var p_btn = $('.profile_btn');
-  var circle = $('<div>').addClass('noti_circle');
-  circle.text(1);
-  p_btn.append(circle);
 
 
   $('.handshake_btn').click(showNotificationsDialog);
