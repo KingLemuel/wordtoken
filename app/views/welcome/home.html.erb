@@ -22,7 +22,11 @@
 
     <div class="action">
       <div class="circle">
-        <p>Let's Trust</p>
+        <% if user_signed_in? %>
+        <%= link_to "Let's Trust", current_user %>
+      <% else %>
+        <%= link_to "Let's Trust", signup_path %>
+      <% end %>
       </div>
     </div>
   </div>
