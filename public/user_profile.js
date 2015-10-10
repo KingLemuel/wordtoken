@@ -46,6 +46,7 @@ function isElementInViewport(el) {
 //token_box 
 var token_box = $('.token_box');
 $('.give_token').click(function(){
+  if (token_box.find('input:checkbox').length == 0) return;
   token_box.fadeIn();
   var n = token_box.find('.dialog').offset().top;
   $('html, body').animate({ scrollTop: (n - 100)+"px" });
