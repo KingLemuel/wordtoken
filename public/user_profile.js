@@ -45,6 +45,10 @@ function isElementInViewport(el) {
 
 //token_box 
 var token_box = $('.token_box');
+
+if (token_box.find('input:checkbox').length == 0) {
+  $('.give_token').text('All Given');
+}
 $('.give_token').click(function(){
   if (token_box.find('input:checkbox').length == 0) return;
   token_box.fadeIn();
