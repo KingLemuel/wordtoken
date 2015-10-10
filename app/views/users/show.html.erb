@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="/user_profile.css">
 
 
-
 <div class="cont main">
   <div class="profile_bg">
     <!-- Handicon image -->
@@ -44,76 +43,37 @@
         <div class="text"><%= @user.name %></div>
       </div>
     </div>
+
+
+
     <div class="two_columns">
       <div class="left">
+      <% token_data = @user.passive_connections.group_by { |e| e.word_token.label }.sort_by {|k,v| v.size}.reverse %>
+
         <h3>Tokens</h3>
         <div class="tokens">
+        <% token_data.each do |e| %> 
           <div class="token">
             <div class="tag">
-              <div class="word">CSS</div>
+              <div class="word"><%= e.first %></div>
               <span class="times">x</span>
-              <span class="num">4</span>
+              <span class="num"><%= e[1].count %></span>
             </div>
 
             <div class="people">
-              <div class="person"></div>
-              <div class="person"></div>
-              <div class="person"></div>
-              <div class="person"></div>
+           <% e[1].each do |e| %>
+              <div class="person"><%= link_to gravatar_for(e.giver, 50), e.giver %></div>
+          <% end %>
             </div>
           </div>
-          <div class="token">
-            <div class="tag">
-              <div class="word">Javascript</div>
-              <span class="times">x</span>
-              <span class="num">4</span>
-            </div>
-
-            <div class="people">
-              <div class="person"></div>
-              <div class="person"></div>
-              <div class="person"></div>
-              <div class="person"></div>
-            </div>
-          </div>
-          <div class="token">
-            <div class="tag">
-              <div class="word">Public Speaking</div>
-              <span class="times">x</span>
-              <span class="num">3</span>
-            </div>
-
-            <div class="people">
-              <div class="person"></div>
-              <div class="person"></div>
-              <div class="person"></div>
-            </div>
-          </div>
-          <div class="token">
-            <div class="tag">
-              <div class="word">Honest</div>
-              <span class="times">x</span>
-              <span class="num">2</span>
-            </div>
-
-            <div class="people">
-              <div class="person"></div>
-              <div class="person"></div>
-            </div>
-          </div>
-          <div class="token">
-            <div class="tag">
-              <div class="word">Punctual</div>
-              <span class="times">x</span>
-              <span class="num">1</span>
-            </div>
-
-            <div class="people">
-              <div class="person"></div>
-            </div>
-          </div>
-
+        <% end %>
         </div>
+
+
+
+
+
+
         <div class="show_more">
           Show More
         </div>
@@ -125,73 +85,16 @@
           <%= render 'request_form' %>
         </div>
 
-
         <div class="notable">
           <div class="title">Notable Givers</div>
-
+   
           <div class="person">
             <div class="img"></div>
-            <div class="info">
+            <div class="info"> 
               <span class="name">Wayne</span>
               <span class="credibility">9999</span>
             </div>
           </div>
-
-          <div class="person">
-            <div class="img"></div>
-            <div class="info">
-              <span class="name">Wayne</span>
-              <span class="credibility">600</span>
-            </div>
-          </div>
-
-          <div class="person">
-            <div class="img"></div>
-            <div class="info">
-              <span class="name">Wayne</span>
-              <span class="credibility">56</span>
-            </div>
-          </div>
-
-          <div class="person">
-            <div class="img"></div>
-            <div class="info">
-              <span class="name">Wayne</span>
-              <span class="credibility">30</span>
-            </div>
-          </div>
-
-          <div class="person">
-            <div class="img"></div>
-            <div class="info">
-              <span class="name">Wayne</span>
-              <span class="credibility">22</span>
-            </div>
-          </div>
-
-          <div class="person">
-            <div class="img"></div>
-            <div class="info">
-              <span class="name">Wayne</span>
-              <span class="credibility">11</span>
-            </div>
-          </div>
-
-          <div class="person">
-            <div class="img"></div>
-            <div class="info">
-              <span class="name">Wayne</span>
-              <span class="credibility">9</span>
-            </div>
-          </div>
-          <div class="person">
-            <div class="img"></div>
-            <div class="info">
-              <span class="name">Wayne</span>
-              <span class="credibility">21</span>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
