@@ -8,4 +8,4 @@
 
 	word_tokens = WordToken.create([ {label: "Communication"}, {label: "Honesty"}, {label: "Reliable"},
 		{label: "Leader"}, {label: "Trustworthy"}, {label: "CSS"}, {label: "Javascript"},{label: "HTML"}, {label: "RAILS"}, {label: "JQUERY"}, 
-		{label: "Photoshop"}, {label: "LINUX"}, {label: "Python"}, {label: "DJANGO"} ])
+		{label: "Photoshop"}, {label: "Linux"}, {label: "Python"}, {label: "Django"} ])

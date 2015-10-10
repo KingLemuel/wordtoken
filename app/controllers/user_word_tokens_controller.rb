@@ -1,4 +1,6 @@
 class UserWordTokensController < ApplicationController
+	before_action :signed_in_user
+
 	# Should be called TransferTokens controller - and TransferToken Model #
 
 	#create transfer
@@ -9,5 +11,12 @@ class UserWordTokensController < ApplicationController
 		# @word_tokens.each do |token|
 			#current_user.give_token(@user, token)
 		# end
+
+		binding.pry
+
+		respond_to do |format|
+			format.html { redirect_to @user }
+			format.js
+		end
 	end
 end

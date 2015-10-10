@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :handshakes, only: [:new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
   resources :requests, only: [:create, :destroy]
+  resources :user_word_tokens, only: [:create]
+  
 
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
