@@ -62,8 +62,14 @@ class User < ActiveRecord::Base
 	 	active_connections.find_by(receiver_id: other_user.id).destroy
 	end
 
-	def given?(other_user)
-		tokens_given.include? other_user
+	def given?(other_user, word_token)
+		#iterate over given tokens
+		#determine if token exist
+		#return true
+		active_connections.select { |l| 
+			l.receiver == other_user
+			l.word_token.label == word_token.label 
+		 }.size > 0
 	end
 
 

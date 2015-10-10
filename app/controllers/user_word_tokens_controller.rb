@@ -1,22 +1,20 @@
 class UserWordTokensController < ApplicationController
-	before_action :signed_in_user
+	# before_action :signed_in_user
 
 	# Should be called TransferTokens controller - and TransferToken Model #
 
 	#create transfer
 	def create
-		# @word_tokens = Iterate over and find tokens, pass them into array
-		# create multiple relations with each user for every token
+		 @user = User.find(params[:connection_id].to_i)
 
-		# @word_tokens.each do |token|
-			#current_user.give_token(@user, token)
-		# end
-
-		binding.pry
+		 @word_tokens = params[:Tokens].keys.map {|k| WordToken.find_by(label: k)}
+		 @word_tokens.each do |token|
+		 current_user.give_token(@user, token)
+		 end
 
 		respond_to do |format|
-			format.html { redirect_to @user }
-			format.js
+			format.html { redirect_to @user}
+			format.js 
 		end
 	end
 end

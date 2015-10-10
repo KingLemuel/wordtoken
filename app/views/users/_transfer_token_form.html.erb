@@ -1,9 +1,11 @@
-<%= form_tag(user_word_tokens_path, remote: true) do %>
+<%= form_tag(user_word_tokens_path) do %>
  	<div class="instruction">Choose any amount of Word Tokens that you want to give..</div>
 	<div class="tags">
         <% WordToken.all.each do |token| %>
         <label>
-	        <%= check_box_tag(token.label, token.id)  %>
+        <% next if current_user.given? @user, token %>
+	        <%= check_box_tag("Tokens[#{token.label}]", token.id)  %>
+	        <%= hidden_field_tag :connection_id, value = @user.id %>
 	        <%= token.label %>
 	    </label>
          <% end %> 
