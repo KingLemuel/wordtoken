@@ -1,0 +1,10 @@
+<form>
+      <div class="instruction">Choose any amount of Word Tokens that you want to give..</div>
+        <div class="tags">
+        <% WordToken.all.each do |token| %>
+          <label><input type="checkbox" id="cbox1" value=<%= token.label %>> <%= token.label %></label>
+        <% end %>
+        </div>
+        <div class="instruction">Once you have one or more tokens selected click Vouch</div>
+        <div class="btn_give">Vouch</div>
+ </form>

@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
 	has_many :tokens_given, through: :active_connections, source: :giver
 	has_many :tokens_received, through: :passive_connections, source: :receiver
 
+
+
+
 	# Handshake - User - Relations
 	#Handshake Relationship
 	has_many :handshakes

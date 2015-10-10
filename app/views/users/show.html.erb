@@ -30,8 +30,8 @@
       </div>
       <div class="divider"></div>
       <div class="all_tokens">
-        <div class="num">90</div>
-        <div class="title">Total Tokens</div>
+        <div class="num"><%= @user.tokens_received.count%></div>
+        <div class="title">Tokens</div>
       </div>
       <div class="last_active">
         <div class="num">3m</div>
@@ -211,28 +211,7 @@
       Give <span><%= @user.name %></span> A Token
     </div>
     <div class="box">
-      <form>
-        <div class="instruction">Choose any amount of Word Tokens that you want to give..</div>
-        <div class="tags">
-          <label><input type="checkbox" id="cbox1" value="communication"> Communication</label>
-          <label><input type="checkbox" id="cbox1" value="honesty"> Honesty</label>
-          <label><input type="checkbox" id="cbox1" value="reliable"> Reliable</label>
-          <label><input type="checkbox" id="cbox1" value="leader"> Leader</label>
-          <label><input type="checkbox" id="cbox1" value="trustworthy"> Trustworthy</label>
-          <label><input type="checkbox" id="cbox1" value="trustworthy"> Trustworthy</label>
-          <label><input type="checkbox" id="cbox1" value="css"> Css</label>
-          <label><input type="checkbox" id="cbox1" value="javascript"> Javascript</label>
-          <label><input type="checkbox" id="cbox1" value="html"> Html</label>
-          <label><input type="checkbox" id="cbox1" value="rails"> Rails</label>
-          <label><input type="checkbox" id="cbox1" value="jquery"> Jquery</label>
-          <label><input type="checkbox" id="cbox1" value="photoshop"> Photoshop</label>
-          <label><input type="checkbox" id="cbox1" value="linux"> Linux</label>
-
-
-        </div>
-        <div class="instruction">Once you have one or more tokens selected click Vouch</div>
-        <div class="btn_give">Vouch</div>
-      </form>
+      <%= render 'transfer_token_form' %>
     </div>
   </div>
 </div>
@@ -243,8 +222,8 @@
 
   <% @req = req %>
     <div class="user"> 
-      <div class="img"><%= gravatar_for @req.user, 35 %></div>
-      <div class="name"><%= req.user.name %></div>
+      <div class="img"><%= link_to (gravatar_for @req.user, 35 ), @req.user %></div>
+      <div class="name"><%= link_to req.user.name, @req.user %></div>
       
       <div class="btns">
 

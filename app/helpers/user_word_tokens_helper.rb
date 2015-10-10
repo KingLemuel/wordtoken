@@ -1,0 +1,2 @@
+module UserWordTokensHelper
+end

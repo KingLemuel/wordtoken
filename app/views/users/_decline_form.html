@@ -1,6 +1,0 @@
-
-<%= form_for('/handshakes', method: "delete", remote: true) do |f| %>
-    <%= hidden_field_tag :connection_id, value = @req.id %> 
-	<%= f.submit "Decline", class: "decline" %>
-<% end %> 
-
