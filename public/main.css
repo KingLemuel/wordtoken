@@ -198,12 +198,16 @@ nav li a.selected:hover {
   background-color: #F55F4E;
   border-radius: 1000px;
   text-align: center;
-  overflow: auto;
+  overflow: hidden;
+  position: relative;
   margin: auto;
   transition: all .5s;
 }
 
-.main .action .circle p {
+.main .action .circle a {
+  padding: 100px;
+  vertical-align: middle;
+  text-decoration: none;
   transition: all .5s;
   position: absolute;
   top: 50%;
@@ -221,7 +225,7 @@ nav li a.selected:hover {
   cursor: pointer;
 }
 
-.main .action:hover .circle p {
+.main .action:hover .circle a {
     color: #F55F4E;
  
 }
