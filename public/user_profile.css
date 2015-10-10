@@ -461,7 +461,11 @@ nav li a.selected:hover {
   background-color: #000;
   overflow: hidden;
 }
-
+.notification_box .name a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #000;
+}
 .notification_box .name {
   margin-left: 6px;
 }
