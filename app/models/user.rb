@@ -100,8 +100,9 @@ class User < ActiveRecord::Base
 	 def give_credibility(other_user)
 	 	current_user_cb = CredibilitySystem.find_by(user_id: self.id).points
 	 	weight = (current_user_cb * 0.10).to_i
-	 	other_user_cb = CredibilitySystem.find_by(user_id: other_user.id).points += weight
-	 	other_user_cb.save 
+	 	other_user_sys = CredibilitySystem.find_by(user_id: other_user.id)
+	 	other_user_points = CredibilitySystem.find_by(user_id: other_user.id).points
+	 	other_user_sys.update(points: other_user_points + weight)
 	 end
 	
 	# Set up accessible (or protected) attributes for your model
