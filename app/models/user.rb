@@ -29,7 +29,8 @@ class User < ActiveRecord::Base
 	has_many :inverse_req_connections, :through => :inverse_requests, :source => :user
 
 	# Credibility - Relations
-	has_many :credibility_systems
+	has_one :credibility_system
+
 
 	# Validations 
 	validates :name,  presence: true, length: { maximum: 30 }
