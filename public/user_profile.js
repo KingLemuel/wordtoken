@@ -73,7 +73,7 @@ var n = 6;
 if (all_token.length == 0) {
   $('.no_token_msg').show();
 }
-if (all_token.length < n) {
+if (all_token.length <= n) {
   show_more_btn.hide();
 } else {
   all_token.eq(n-1).addClass('no_bottom');
