@@ -67,8 +67,7 @@ class User < ActiveRecord::Base
 		#determine if token exist
 		#return true
 		active_connections.select { |l| 
-			l.receiver == other_user
-			l.word_token.label == word_token.label 
+			l.receiver == other_user && l.word_token.label == word_token.label 
 		 }.size > 0
 	end
 
