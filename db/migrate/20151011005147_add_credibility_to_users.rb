@@ -3,3 +3,4 @@ class AddCredibilityToUsers < ActiveRecord::Migration
     add_column :users, :credibility, :integer
   end
 end
+
