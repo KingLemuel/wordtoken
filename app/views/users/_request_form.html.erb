@@ -2,6 +2,8 @@
     <div class="button give_token">Give Token</div>
 	<% if current_user.shook_hands? @user %>
 	 <div class="button shake">Connected</div>
+	<% elsif current_user.made_requests? @user %>
+		<div class="button shake">Shake Pending..</div>
 	<% else %>
 		<%= form_for(current_user.requests.build(connection_id: @user.id),remote: true) do |f| %>
 		<div><%= hidden_field_tag :connection_id, value = @user.id %></div>

@@ -94,6 +94,10 @@ class User < ActiveRecord::Base
 	 	handshakes.find_by(connection_id: other_user.id) || inverse_handshakes.find_by(user_id: other_user.id)
 	 end
 
+	 def made_requests?(other_user)
+	 	requests.find_by(connection_id: other_user.id) || inverse_requests.find_by(user_id: other_user.id)
+	 end
+
 
 	 # Credibility
 
