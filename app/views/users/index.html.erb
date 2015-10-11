@@ -1,0 +1,16 @@
+<link rel="stylesheet" type="text/css" href="/user_index.css">
+
+<div class="cont main">
+	<h3>Recently Joined Users</h3>
+	<div class="users">
+		<% @users.each do |x| %>
+			<%= link_to(x) do %>
+				<div class="user">
+					<div class="img"><%= gravatar_for(x, 50) %></div>
+					<div class="name"> <%= x.name %></div>
+				</div>
+			<% end %>
+		<% end %>
+		
+	</div>
+</div>

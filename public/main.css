@@ -258,3 +258,24 @@ nav li a.selected:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.no_underline {
+    text-decoration: none;
+}
+.view_recent {
+  text-decoration: none;
+  padding: 15px;
+  border: 1px solid #aaa;
+  color: #333;
+  font-weight: 100;
+  margin: auto;
+  width: 300px;
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: -54px;
+  transition: all, .5s;
+}
+
+.view_recent:hover {
+  color: #000;
+  border-color: #000;
+}

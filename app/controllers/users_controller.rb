@@ -3,12 +3,12 @@ class UsersController < ApplicationController
   before_action :correct_user,   only:   [:edit, :update]
 
 
-  # def index
-  #   @search = User.search do 
-  #     fulltext params[:search]
-  #   end
-  #   @users = @search.results
-  # end
+  def index
+    # @search = User.search do 
+    #   fulltext params[:search]
+    # end
+    @users = User.last(30)
+  end
 
   def show
     @user = User.find(params[:id])
