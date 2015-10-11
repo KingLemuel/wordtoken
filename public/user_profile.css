@@ -420,8 +420,17 @@ nav li a.selected:hover {
   display: inherit;
 }
 
-
-
+.no_token_msg {
+  width: 500px;
+  margin: auto;
+  background-color: #eee;
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+.hide {
+  display: none;
+}
 
 .token_box .btn_give  {
   user-select: none;

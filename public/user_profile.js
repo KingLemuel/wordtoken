@@ -63,3 +63,21 @@ token_box.click(function(e) {
 });
 
 
+
+// hide show more if there are not more than 7 tokens
+
+var tokens = $('.tokens');
+var all_token =  tokens.find('.token');
+var show_more_btn = $('.show_more');
+if (all_token.length == 0) {
+  $('.no_token_msg').show();
+}
+if (all_token.length < 7) {
+  show_more_btn.hide();
+} else {
+  all_token.slice(7).hide();
+}
+
+show_more_btn.click(function(){
+  all_token.show();
+});

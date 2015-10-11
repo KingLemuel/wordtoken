@@ -52,6 +52,7 @@
       <% token_data = @user.passive_connections.group_by { |e| e.word_token.label }.sort_by {|k,v| v.size}.reverse %>
 
         <h3>Tokens</h3>
+        <div class="no_token_msg hide">Welcome, you WordTokens will show up here. Get your friends to connect with you.</div>
         <div class="tokens">
         <% token_data.each do |e| %> 
           <div class="token">
