@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151011005147) do
+ActiveRecord::Schema.define(version: 20151011140859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "credibility_systems", force: :cascade do |t|
+    t.integer  "points"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "handshakes", force: :cascade do |t|
     t.integer  "user_id"
@@ -49,7 +56,6 @@ ActiveRecord::Schema.define(version: 20151011005147) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
-    t.integer  "credibility"
   end
 
   create_table "word_tokens", force: :cascade do |t|

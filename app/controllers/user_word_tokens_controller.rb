@@ -9,7 +9,7 @@ class UserWordTokensController < ApplicationController
 
 		 @word_tokens = params[:Tokens].keys.map {|k| WordToken.find_by(label: k)}
 		 @word_tokens.each do |token|
-		 current_user.give_token(@user, token)
+			 current_user.give_token(@user, token)
 		 end
 
 		respond_to do |format|
