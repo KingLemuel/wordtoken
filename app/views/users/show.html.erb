@@ -99,14 +99,14 @@
 
         <div class="notable">
           <div class="title">Notable Givers</div>
-          <% notable_users = @user.passive_connections.group_by(&:giver).keys.sort_by { |x| x.credibility_system.points }.reverse[0..9] %>
+          <% notable_users = @user.passive_connections.group_by(&:giver).keys.sort_by { |x| x.credibility_systems.first.points }.reverse[0..9] %>
           <% notable_users.each do |user|%>
             <%= link_to(user) do %>
               <div class="person">
                 <div class="img"><%= gravatar_for(user,40) %></div>
                 <div class="info"> 
                   <span class="name"><%= user.name %></span>
-                  <span class="credibility"><%= user.credibility_system.points %></span>
+                  <span class="credibility"><%= user.credibility_systems.first.points %></span>
                 </div>
               </div>
             <% end %>

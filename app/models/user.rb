@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 	has_many :inverse_req_connections, :through => :inverse_requests, :source => :user
 
 	# Credibility - Relations
-	has_one :credibility_system
+	has_many :credibility_systems
 
 
 	# Validations 
