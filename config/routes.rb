@@ -1,6 +1,8 @@
 
 Rails.application.routes.draw do
 
+  get 'map/show'
+
   resources :users
   resources :word_tokens, only: [:new, :create, :destroy]
   resources :handshakes, only: [:new, :create, :destroy]

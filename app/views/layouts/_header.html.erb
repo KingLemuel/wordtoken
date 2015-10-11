@@ -4,7 +4,7 @@
 	  <nav class='nav'>
 	    <ul>
 	      <li><%= link_to 'Home', root_path %></li>
-	      <li><%= link_to 'Map', root_path %></li>
+	      <li><%= link_to 'Map', map_show_path %></li>
 	      <li class='profile_btn'><%= link_to 'Profile', user_path(current_user) %>
 	      <% if current_user.inverse_requests.count > 0 %>
 			<div class='noti_circle'><%= current_user.inverse_requests.count %></div>
