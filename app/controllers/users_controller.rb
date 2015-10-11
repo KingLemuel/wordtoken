@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @credibility = CredibilitySystem.find_by(user_id: @user.id)
   end
 
   def new
@@ -34,6 +35,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      @user.credibility_systems.create(points: "100")
       log_in @user
       flash[:success] = "Welcome to WordToken!"
       redirect_to @user

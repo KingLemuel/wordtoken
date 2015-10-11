@@ -28,6 +28,9 @@ class User < ActiveRecord::Base
 	has_many :inverse_requests, :class_name => "Request", :foreign_key => "connection_id"
 	has_many :inverse_req_connections, :through => :inverse_requests, :source => :user
 
+	# Credibility - Relations
+	has_many :credibility_systems
+
 	# Validations 
 	validates :name,  presence: true, length: { maximum: 30 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -90,6 +93,12 @@ class User < ActiveRecord::Base
 
 	 def shook_hands?(other_user)
 	 	handshakes.find_by(connection_id: other_user.id) || inverse_handshakes.find_by(user_id: other_user.id)
+	 end
+
+
+	 # Credibility
+
+	 def give_credibility(other_user)
 	 end
 	
 	# Set up accessible (or protected) attributes for your model
