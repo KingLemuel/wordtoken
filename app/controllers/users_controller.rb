@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :signed_in_user, only: [:edit, :update]
   before_action :correct_user,   only:   [:edit, :update]
-  after_action :update_last_seen
+  before_action :update_last_seen
 
 
   def index

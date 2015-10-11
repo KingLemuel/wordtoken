@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
 	# before_action :signed_in_user
-	after_action :update_last_seen
+	before_action :update_last_seen
 
 
 	def create
