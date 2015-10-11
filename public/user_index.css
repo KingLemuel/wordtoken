@@ -124,8 +124,21 @@ h3 {
   margin-bottom: 10px;
 }
 
+.no_underline {
+  text-decoration: none;
+  color: #000;
+}
+
+
 .users a:nth-child(odd) .user {
   background: #ddd;
+}
+
+.users a.no_underline:hover .user {
+  background-color: #F55F4E;
+}
+.no_underline:hover {
+  color: #fff;
 }
 .user .name {
   text-transform: capitalize;

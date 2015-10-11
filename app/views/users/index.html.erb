@@ -4,7 +4,7 @@
 	<h3>Recently Joined Users</h3>
 	<div class="users">
 		<% @users.each do |x| %>
-			<%= link_to(x) do %>
+			<%= link_to(x, class: 'no_underline') do %>
 				<div class="user">
 					<div class="img"><%= gravatar_for(x, 50) %></div>
 					<div class="name"> <%= x.name %></div>
