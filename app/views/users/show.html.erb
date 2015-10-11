@@ -81,7 +81,7 @@
         </div>
 
         <div class="handshakers">
-          <h3>HandShakers</h3>
+          <h3>HandShakes</h3>
           <% total_handshakes_users = @user.handshakes.map {|x| x.connection } + @user.inverse_handshakes.map {|x| x.user } %>
           <% total_handshakes_users.each do |x| %>
             <div class="person"><%= link_to( ( gravatar_for(x,35) ) + x.name, x) %></div>
