@@ -34,7 +34,7 @@
         <div class="title">Tokens</div>
       </div>
       <div class="last_active">
-        <div class="num">3m</div>
+        <div class="num"><%= Time.now.min - @user.last_seen.min %>m</div>
         <div class="title">Last Seen</div>
       </div>
     </div>

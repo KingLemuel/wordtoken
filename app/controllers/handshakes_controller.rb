@@ -1,4 +1,6 @@
 class HandshakesController < ApplicationController
+	after_action :update_last_seen
+
 	def create 
 		# binding.pry
 		@user = User.find(params[:connection_id])

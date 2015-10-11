@@ -1,4 +1,5 @@
 class UserWordTokensController < ApplicationController
+	after_action :update_last_seen
 	# before_action :signed_in_user
 
 	# Should be called TransferTokens controller - and TransferToken Model #

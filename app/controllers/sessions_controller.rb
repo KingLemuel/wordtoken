@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  after_action :update_last_seen
+  
   def new
   end
 

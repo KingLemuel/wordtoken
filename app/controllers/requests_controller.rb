@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
 	# before_action :signed_in_user
+	after_action :update_last_seen
 
 
 	def create
@@ -11,9 +12,8 @@ class RequestsController < ApplicationController
 			format.html { redirect_to current_user }
 			format.js
 		end
-
-	
 	end
+
 
 	def destroy
 		@user = User.find(params[:connection_id])

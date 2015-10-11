@@ -21,4 +21,8 @@ module SessionsHelper
 		!current_user.nil?
 	end
 
+	def update_last_seen
+		current_user.update_attribute(:last_seen, Time.now) if current_user
+	end
+
 end
