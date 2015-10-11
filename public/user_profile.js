@@ -69,15 +69,19 @@ token_box.click(function(e) {
 var tokens = $('.tokens');
 var all_token =  tokens.find('.token');
 var show_more_btn = $('.show_more');
+var n = 6;
 if (all_token.length == 0) {
   $('.no_token_msg').show();
 }
-if (all_token.length < 7) {
+if (all_token.length < n) {
   show_more_btn.hide();
 } else {
-  all_token.slice(7).hide();
+  all_token.eq(n-1).addClass('no_bottom');
+  all_token.slice(n).hide();
 }
 
 show_more_btn.click(function(){
+  all_token.removeClass('no_bottom');
   all_token.show();
+  show_more_btn.remove();
 });

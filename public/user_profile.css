@@ -199,7 +199,7 @@ nav li a.selected:hover {
   overflow: auto;
   border-bottom: 1px solid #aaa;
 }
-.left .token:last-of-type {
+.left .token:last-of-type, .left .token.no_bottom { 
   border-bottom: none;
 }
 .left .token .num,
