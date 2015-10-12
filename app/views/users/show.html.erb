@@ -30,7 +30,7 @@
       </div>
      
         <div class="last_active">
-          <% time = Time.now.min - @user.last_seen.min %>
+          <% time = (Time.now.min - @user.last_seen.min).abs %>
           <% if (time == 0) %>
             <div class="num">Now</div>
           <% else %>
