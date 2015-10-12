@@ -1,4 +1,6 @@
-<link rel="stylesheet" type="text/css" href="/sign_up_in.css">
+<% content_for :header_style do %>
+  <link rel="stylesheet" type="text/css" href="/sign_up_in.css">
+<% end %>
 
 <%= form_for(:session, url: login_path) do |f| %>
 
