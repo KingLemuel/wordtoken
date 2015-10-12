@@ -61,11 +61,13 @@ body {
 }
 
 .nav {
-  padding: 20px;
-  padding-right: 0;
-  font-size: 15px;
-  float: right;
-  margin-top: 30px;
+    padding: 20px;
+    padding-right: 0;
+    font-size: 15px;
+    /* float: right; */
+    margin-top: 30px;
+    display: inline-block;
+    margin-left: 461px;
 }
 .nav li {
   display: inline-block;
