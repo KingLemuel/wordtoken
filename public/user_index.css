@@ -106,7 +106,7 @@ h3 {
   margin-bottom: 20px;
 }
 .users {
-  column-count: 3;
+
 }
 .user .img {
   width: 50px;
@@ -126,8 +126,11 @@ h3 {
 }
 
 .no_underline {
+  display: inline-block;
   text-decoration: none;
   color: #000;
+  width: 32.33%;
+  box-sizing: border-box;
 }
 
 
