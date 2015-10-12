@@ -27,12 +27,17 @@
         <div class="num"><%= @user.tokens_received.count%></div>
         <div class="title">Tokens</div>
       </div>
-      <% unless current_user? @user %>
+     
         <div class="last_active">
-          <div class="num"><%= Time.now.min - @user.last_seen.min %>m</div>
+          <% time = Time.now.min - @user.last_seen.min %>
+          <% if (time == 0) %>
+            <div class="num">Now</div>
+          <% else %>
+            <div class="num"><%= Time.now.min - @user.last_seen.min %>m</div>
+          <% end %>
           <div class="title">Last Seen</div>
         </div>
-      <% end %>
+
     </div>
     <div class="name_sect">
       <div class="name">
