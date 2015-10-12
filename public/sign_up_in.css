@@ -36,10 +36,14 @@ body {
     padding-right: 0;
     font-size: 15px;
     /* float: right; */
-
     display: inline-block;
     margin-left: 461px;
+    position: relative;
+    top: 14px;
 }
+.loginOne {
+  margin-left: 533px;
+} 
 .nav li {
   display: inline-block;
 }
