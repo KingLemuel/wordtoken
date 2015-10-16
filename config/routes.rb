@@ -1,6 +1,8 @@
 
 Rails.application.routes.draw do
 
+  get 'autocomplete/user_json'
+
   get 'map/show'
 
   resources :users

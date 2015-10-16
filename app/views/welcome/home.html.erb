@@ -15,11 +15,21 @@
 
 
     <div class="search">
-     <!--  <input type="text" placeholder='Find Someone' /> -->
-    <%= form_tag users_path, :method => :get do %>
-      <%= text_field_tag :search, params[:search] %>
+      <input id= 'search_input_box' type="text" placeholder='Find Someone' />
+<!--     <%= form_tag users_path, :method => :get do %>
+
+      <%= text_field_tag :search, params[:search], id: 'search_input_box' %>
       
-    <% end %>
+    <% end %> -->
+    <div class="suggestions hide">
+      <!-- <div class="user">
+        <a href="#">
+          <div class="img"></div>
+          <div class="name">Test</div>
+        </a>
+      </div> -->
+      <div class="no_user hide">No Users found</div>
+    </div>
     </div>
 
     
@@ -34,7 +44,7 @@
       </div>
     </div>
   </div>
-  <%= link_to(users_path, class: 'no_underline') do %>
+  <%= link_to(users_path, class: 'no_underline recent_parent') do %>
     <div class="view_recent">View Recent Users</div>
   <% end %>
 
