@@ -6,7 +6,7 @@ class AutocompleteController < ApplicationController
   		return
   	end
   	data = User.where("lower(name) LIKE ?", params[:q].downcase+"%").limit(20).all.map { |user| 
-  		{ name: user.name, img_url: gravatar(user), profile_link: user_path(user)}
+  		{ name: user.name, img_url: gravatar(user), profile_link: user_signed_in? ? user_path(user) : login_path}
   	}
   	render :json => data
   end

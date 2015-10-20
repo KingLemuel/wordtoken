@@ -44,9 +44,10 @@
       </div>
     </div>
   </div>
-  <%= link_to(users_path, class: 'no_underline recent_parent') do %>
-    <div class="view_recent">View Recent Users</div>
-  <% end %>
+
+    <%= link_to(user_signed_in? ? users_path : login_path, class: 'no_underline recent_parent') do %>
+      <div class="view_recent">View Recent Users</div>
+    <% end %>
 
   <div class="features">
     <div class="feature">

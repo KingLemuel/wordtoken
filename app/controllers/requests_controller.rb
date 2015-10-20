@@ -9,7 +9,7 @@ class RequestsController < ApplicationController
 
 		current_user.requests.create(connection_id: @user.id)
 		respond_to do |format|
-			format.html { redirect_to current_user }
+			format.html { redirect_to @user }
 			format.js
 		end
 	end
