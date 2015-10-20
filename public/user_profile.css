@@ -608,6 +608,7 @@ nav li a.selected:hover {
     padding-right: 14px;
     border-radius: 3px;
     background-color: #fafafa;
+        margin-bottom: 9px;
 }
 
 .handshakers .person img {
