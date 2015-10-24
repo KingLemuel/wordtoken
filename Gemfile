@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 #pry 
 gem 'pry'
-
+gem 'omniauth-twitter'
 # Add sunspot
 # gem 'sunspot_rails'
 

@@ -45,6 +45,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def create_via_oauth
+    data = request.env['omniauth.auth']
+    uid = data.uid
+    @user = User.find_by oauth_id: uid
+    if (@user) 
+      log_in(@user)
+    else 
+      fake_email = (0...50).map { ('a'..'z').to_a[rand(26)] }.join + "@nulnulnulnul.com"
+      fake_password  = (0...50).map { ('a'..'z').to_a[rand(26)] }.join + "@nulnulnulnul.com"
+      name = data.info.name.split.first
+      @user = User.new(oauth_id: uid, name: name, email: fake_email, password: fake_password)
+      @user.save
+      @user.credibility_systems.create(points: "100")
+      log_in @user
+      flash[:success] = "Welcome to WordToken!"
+    end
+      redirect_to @user
+  end
+
   def destroy
     user = User.find(params[:id])
     unless current_user?(user) 

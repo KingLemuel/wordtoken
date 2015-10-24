@@ -1,5 +1,6 @@
 
 Rails.application.routes.draw do
+  get '/auth/:provider/callback', to: 'users#create_via_oauth'
 
   get 'autocomplete/user_json'
 

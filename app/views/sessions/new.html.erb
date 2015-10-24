@@ -5,6 +5,11 @@
 <%= form_for(:session, url: login_path) do |f| %>
 
 <div class="cont main">
+  <div class="social_logins">
+      <%= link_to( '/auth/twitter') do %>
+        <div class="img twitter"></div><span>Sign In with Twitter</span>
+      <% end %>
+  </div>
   <div class="stuff">
     <div class="btn">
       <div class="title open">Login</div>
