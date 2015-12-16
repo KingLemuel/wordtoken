@@ -9,11 +9,6 @@ class User < ActiveRecord::Base
 							   foreign_key: "receiver_id",
 							   dependent: :destroy
 
-	has_many :tokens_given, through: :active_connections, source: :giver
-	has_many :tokens_received, through: :passive_connections, source: :receiver
-
-
-
 
 	# Handshake - User - Relations
 	#Handshake Relationship
@@ -42,10 +37,6 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 
-	# # solr
-	# searchable do 
-	# 	text :name
-	# end
 
 
 	def User.digest(string)
@@ -88,8 +79,6 @@ class User < ActiveRecord::Base
      	handshakes.create(connection_id: other_user.id)
      	cancel_request other_user
      end
-
-
 
 	 def shook_hands?(other_user)
 	 	handshakes.find_by(connection_id: other_user.id) || inverse_handshakes.find_by(user_id: other_user.id)
