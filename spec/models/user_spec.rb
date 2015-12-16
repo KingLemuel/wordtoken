@@ -30,6 +30,31 @@ describe User do
 	it { should respond_to(:made_requests?) }
 	it { should respond_to(:give_credibility) }
 
+	it { should be_valid }
+
+	describe "when name field is empty" do
+		before { @user.name = " "}
+		it { should_not be_valid }
+	end
+
+	describe "when email field is empty" do 
+		before { @user.email = " "}
+		it { should_not be_valid }
+	end
+
+	describe "when password is empty" do 
+		before do 
+			@user = User.new(password: " ", password_confirmation: " ")
+		end
+		it { should_not be_valid }
+	end
+
+	describe "when password is less than 6 characters" do 
+		before do 
+			@user = User.new(password: "lesss", password_confirmation: "lesss")
+		end
+		it { should_not be_valid }
+	end
 end
 
 
